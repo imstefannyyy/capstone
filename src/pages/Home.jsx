@@ -12,7 +12,7 @@ function Home() {
     const [sortConfig, setSortConfig] = useState({ key: "population", direction: "desc" });
     const [currentPage, setCurrentPage] = useState(1);
     const [countriesPerPage, setCountriesPerPage] = useState(15);
-    const [isLoading, setIsLoading] = useState(countries.length === 0);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const result = countries.filter(country => {
@@ -20,7 +20,7 @@ function Home() {
         });
         setFilteredCountries(result);
         setCurrentPage(1);
-        setIsLoading(false);
+        if (countries.length > 0) setIsLoading(false);
     }, [searchTerm, countries]);
 
     useEffect(() => {
