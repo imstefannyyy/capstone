@@ -35,7 +35,7 @@ function Table({datas, handleSort, sortConfig, currentPage, countriesPerPage}) {
                 </thead>
                 <tbody>
                     {datas && datas.map((data, index) => (
-                        <tr key={index} onClick={() => handleDetails(data.cca2)}>
+                        <tr key={index} onClick={() => handleDetails(data.cca2)} className="align-middle">
                             <td className="text-center">{(currentPage - 1) * countriesPerPage + index + 1}</td>
                             <td className="text-center">
                                 <img

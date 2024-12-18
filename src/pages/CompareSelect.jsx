@@ -29,7 +29,7 @@ function CompareSelect() {
                 <div className="py-3 row">
                     <div className="col-12 col-lg-6 d-flex justify-content-end pb-2 pb-lg-0 border-end border-dark border-2 pe-4" style={{height: "20vh"}}>
                         <i className="fas fa-trash me-3 my-auto" aria-hidden="true" onClick={() => setFirstCountry(null)}></i>
-                        <div className="col-11 col-lg-5 border border-dark">
+                        <div className="col-11 col-lg-5 border border-dark text-center">
                             <img src={firstCountry?.flags.png} alt="Select country" className="img-fluid" style={{ height: "100%", width: "100%" }} />
                         </div>
                     </div>
