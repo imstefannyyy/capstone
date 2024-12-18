@@ -44,7 +44,7 @@ function CompareSelect() {
                     Compare
                 </button>
             </div>
-            <div className="container-fluid px-lg-5 pt-3 d-flex flex-wrap gap-1 justify-content-around" style={{maxHeight: "calc(100vh - 20vh - 14rem)", flexGrow: 1, overflowY: "auto"}}>
+            <div className="container-fluid px-lg-5 pt-3 d-flex flex-wrap gap-1 justify-content-center" style={{maxHeight: "calc(100vh - 20vh - 14rem)", flexGrow: 1, overflowY: "auto"}}>
                 {filteredCountries && filteredCountries.map((country, index) => {
                     return <Kanban data={country} key={index} onClick={() => handleCountrySelected(country)} />
                 })}

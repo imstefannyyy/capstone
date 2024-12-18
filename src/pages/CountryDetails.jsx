@@ -9,7 +9,7 @@ function CountryDetails() {
 
     return (
         <div className="container-fluid px-lg-5 pt-3">
-            <TableCard data={country} flagSize={"15rem"} />
+            {country && <TableCard data={country} flagSize={"15rem"} /> }
         </div>
     );
 }

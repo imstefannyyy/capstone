@@ -14,10 +14,10 @@ function CompareResult() {
             <div className="container-fluid px-lg-5 pt-3 d-flex flex-wrap gap-1 justify-content-center" style={{maxHeight: "calc(100vh - 10rem)", flexGrow: 1, overflowY: "auto"}}>
                 <div className="row w-75">
                     <div className="col-lg-6 col-12 d-flex justify-content-end">
-                        <TableCard data={firstCountry}/>
+                        { firstCountry && <TableCard data={firstCountry}/> }
                     </div>
                     <div className="col-lg-6 col-12">
-                        <TableCard data={secondCountry}/>
+                        { secondCountry && <TableCard data={secondCountry}/> }
                     </div>
                 </div>
             </div>
