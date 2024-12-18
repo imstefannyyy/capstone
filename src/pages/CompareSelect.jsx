@@ -34,7 +34,7 @@ function CompareSelect() {
                         </div>
                     </div>
                     <div className="col-12 col-lg-6 d-flex pt-2 pt-lg-0 ps-4" style={{height: "20vh"}}>
-                        <div className="col-11 col-lg-5 border border-dark">
+                        <div className="col-11 col-lg-5 border border-dark text-center">
                             <img src={secondCountry?.flags.png} alt="Select country" className="img-fluid" style={{ height: "100%", width: "100%" }} />
                         </div>
                         <i className="fas fa-trash ms-3 my-auto" aria-hidden="true" onClick={() => setSecondCountry(null)}></i>
