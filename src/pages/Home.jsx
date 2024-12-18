@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Header from "../components/Home/Header";
 import Table from "../components/Home/Table";
+import LoadingSpinner from '../components/utils/LoadingSpinner';
 
 function Home() {
     const countries = useSelector(state => state.countries);
@@ -11,6 +12,7 @@ function Home() {
     const [sortConfig, setSortConfig] = useState({ key: "population", direction: "desc" });
     const [currentPage, setCurrentPage] = useState(1);
     const [countriesPerPage, setCountriesPerPage] = useState(15);
+    const [isLoading, setIsLoading] = useState(countries.length === 0);
 
     useEffect(() => {
         const result = countries.filter(country => {
@@ -18,6 +20,7 @@ function Home() {
         });
         setFilteredCountries(result);
         setCurrentPage(1);
+        setIsLoading(false);
     }, [searchTerm, countries]);
 
     useEffect(() => {
@@ -63,7 +66,10 @@ function Home() {
                     handlePrevPage,
                 }}
             />
-            <Table datas={currentCountries} handleSort={handleSort} sortConfig={sortConfig} currentPage={currentPage} countriesPerPage={countriesPerPage}/>
+            {isLoading && <LoadingSpinner />}
+            {!isLoading && 
+                <Table datas={currentCountries} handleSort={handleSort} sortConfig={sortConfig} currentPage={currentPage} countriesPerPage={countriesPerPage}/>
+            }
         </>
     )
 };
